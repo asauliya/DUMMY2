@@ -9,9 +9,19 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
-
+      - name: cloning git
+        run: |
+          git config –-global user.name “asauliya”
+          git config –-global user.email "ishusjn@gmail.com"
+          git clone https://github.com/asauliya/DUMMY2.git
+          cd DUMMY2 
       - name: Run Bash script
         run: |
           chmod +x ./script.sh  # Make the script executable
           ./script.sh            # Execute the script
+      - name : git commit changes
+        run: |
+          git add .
+          git commit -m "NO COMMENT"
+          git push -u origin main
     
